@@ -1,4 +1,4 @@
-FROM rocketchat/base:8
+FROM node:8.11-slim
 
 ADD . /app/bundle
 
