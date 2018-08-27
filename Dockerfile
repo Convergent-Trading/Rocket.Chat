@@ -1,6 +1,6 @@
 FROM rocketchat/base:8
 
-ADD . /app
+ADD . /app/bundle
 
 MAINTAINER buildmaster@rocket.chat
 
