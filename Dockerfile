@@ -1,13 +1,11 @@
 FROM rocketchat/base:8
 
-ADD . /app/bundle
+ADD . /app
 
 MAINTAINER buildmaster@rocket.chat
 
-RUN apt-get update && apt-get install -y git python make gcc g++
-
 RUN set -x \
- && cd /app/bundle/server \
+ && cd /app/bundle/programs/server \
  && npm install \
  && npm cache clear --force \
  && chown -R rocketchat:rocketchat /app
@@ -16,15 +14,11 @@ USER rocketchat
 
 VOLUME /app/uploads
 
-ENV RC_VERSION 0.68.4
-
 WORKDIR /app/bundle
-
-ENV NODE_VERSION 8.11.4
 
 # needs a mongoinstance - defaults to container linking with alias 'mongo'
 ENV DEPLOY_METHOD=docker \
-#    NODE_ENV=production \
+    NODE_ENV=production \
     MONGO_URL=mongodb://mongo:27017/rocketchat \
     HOME=/tmp \
     PORT=3000 \
@@ -33,4 +27,4 @@ ENV DEPLOY_METHOD=docker \
 
 EXPOSE 3000
 
-CMD ["node", "/app/bundle/server/main.js"]
+CMD ["node", "main.js"]
