@@ -1,4 +1,4 @@
-FROM node:8.11-slim
+FROM rocketchat/base:8
 
 ADD . /app/bundle
 
@@ -20,6 +20,8 @@ ENV RC_VERSION 0.68.4
 
 WORKDIR /app/bundle
 
+ENV NODE_VERSION 8.11.4
+
 # needs a mongoinstance - defaults to container linking with alias 'mongo'
 ENV DEPLOY_METHOD=docker \
 #    NODE_ENV=production \
@@ -31,4 +33,4 @@ ENV DEPLOY_METHOD=docker \
 
 EXPOSE 3000
 
-CMD ["node", "/app/bundle/server/main.js"]
+CMD ["nodejs", "/app/bundle/server/main.js"]
