@@ -16,6 +16,8 @@ USER rocketchat
 
 VOLUME /app/uploads
 
+ENV RC_VERSION 0.68.4
+
 WORKDIR /app/bundle
 
 # needs a mongoinstance - defaults to container linking with alias 'mongo'
