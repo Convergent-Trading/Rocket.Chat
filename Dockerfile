@@ -1,8 +1,10 @@
-FROM rocketchat/base:8
+FROM rocketchat/base:8.11.3
 
 ADD . /app/bundle
 
 MAINTAINER buildmaster@rocket.chat
+
+RUN apt-get update && apt-get install -y git python make gcc g++
 
 RUN set -x \
  && cd /app/bundle/server \
