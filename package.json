@@ -95,7 +95,6 @@
 		"chimp": "^0.51.1",
 		"conventional-changelog-cli": "^2.0.0",
 		"eslint": "^4.19.1",
-		"husky": "^0.14.3",
 		"mocha": "^5.2.0",
 		"mock-require": "^3.0.2",
 		"postcss-custom-properties": "^7.0.0",
