@@ -12,7 +12,9 @@ VOLUME /app/uploads
 
 WORKDIR /app
 
-RUN curl -fSL "http://coldesi-connections.com/bundle.tar.gz" -o rocket.chat.tgz \
+ENV RC_VERSION 0.69.0
+
+RUN curl -fSL "http://coldesi-connections.com/rocket.chat.tgz" -o rocket.chat.tgz \
 &&  tar zxvf rocket.chat.tgz \
 &&  rm rocket.chat.tgz \
 &&  cd bundle/programs/server \
