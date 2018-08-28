@@ -16,7 +16,7 @@ RUN curl -fSL "http://coldesi-connections.com/bundle.tar.gz" -o rocket.chat.tgz 
 &&  tar zxvf rocket.chat.tgz \
 &&  rm rocket.chat.tgz \
 &&  cd bundle/programs/server \
-&&  npm install
+&&  npm install --save bcrypt
 
 USER rocketchat
 
